@@ -1,0 +1,68 @@
+/* ===== CSS Custom Properties ===== */
+:root {
+  /* 背景色 */
+  --bg-primary: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-card-hover: #1a2744;
+
+  /* 文字色 */
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+
+  /* 台股慣例色（漲紅跌綠） */
+  --color-up: #ff4444;
+  --color-down: #00c853;
+  --color-neutral: #a0a0a0;
+
+  /* 品牌色 */
+  --color-brand: #4f46e5;
+
+  /* 估值色階（深綠→淺綠→黃→橙→紅） */
+  --valuation-panic: #1b5e20;
+  --valuation-crash: #2e7d32;
+  --valuation-bargain: #388e3c;
+  --valuation-cheap: #66bb6a;
+  --valuation-fair: #fdd835;
+  --valuation-overpriced: #ff9800;
+  --valuation-expensive: #f44336;
+  --valuation-crazy: #b71c1c;
+
+  /* 字體 */
+  --font-zh: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* 間距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* 圓角 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ===== 全域樣式 ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-zh);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,41 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# API proxy routes → Netlify Functions（要放在 SPA fallback 前面）
+[[redirects]]
+  from = "/api/yahoo-summary/*"
+  to = "/.netlify/functions/yahoo-summary/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/yahoo/*"
+  to = "/.netlify/functions/yahoo/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/twse/*"
+  to = "/.netlify/functions/twse/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/yahoo-rank"
+  to = "/.netlify/functions/yahoo-rank"
+  status = 200
+
+[[redirects]]
+  from = "/api/yahoo-news"
+  to = "/.netlify/functions/yahoo-news"
+  status = 200
+
+[[redirects]]
+  from = "/api/tdcc-big-holders"
+  to = "/.netlify/functions/tdcc-big-holders"
+  status = 200
+
+# SPA fallback — 所有非 API 路徑都導到 index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

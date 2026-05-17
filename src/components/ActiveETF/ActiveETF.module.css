@@ -1,0 +1,93 @@
+.container {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.badge {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: center;
+  color: #818cf8;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #334155;
+  white-space: nowrap;
+}
+
+.thName {
+  text-align: left !important;
+}
+
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.nameCell {
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.etfName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.etfCode {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.dash {
+  color: #475569;
+}
+
+.note {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container { padding: var(--spacing-sm); }
+  .card { padding: 1rem; }
+}

@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/yahoo-summary/:path*", "destination": "/api/yahoo-summary" },
+    { "source": "/api/yahoo/:path*", "destination": "/api/yahoo" },
+    { "source": "/api/twse/:path*", "destination": "/api/twse" }
+  ]
+}

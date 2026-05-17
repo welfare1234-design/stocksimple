@@ -1,0 +1,69 @@
+.container {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.tab:hover { border-color: #818cf8; color: #e2e8f0; }
+.tabActive { border-color: #4f46e5; background: #4f46e5; color: #fff; }
+
+.loading { color: #64748b; font-size: 0.85rem; padding: 1rem 0; }
+
+.tableWrap {
+  max-height: 500px;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.5rem;
+}
+.tableWrap::-webkit-scrollbar { width: 6px; }
+.tableWrap::-webkit-scrollbar-track { background: #0f172a; border-radius: 3px; }
+.tableWrap::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th {
+  text-align: left;
+  color: #94a3b8;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #334155;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background: var(--bg-card);
+}
+
+.table td {
+  padding: 0.4rem 0.6rem;
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+}
+
+.rank { color: #64748b; width: 2rem; }
+.code { color: #94a3b8; font-family: var(--font-mono); font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+  .container { padding: var(--spacing-sm); }
+  .table { font-size: 0.78rem; }
+  .table th, .table td { padding: 0.35rem 0.4rem; }
+}

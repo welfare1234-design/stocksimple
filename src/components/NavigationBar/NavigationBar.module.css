@@ -1,0 +1,114 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--bg-card);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Desktop nav links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navLink {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.navLink:hover { color: #e2e8f0; }
+.navLinkActive { color: #ffffff; font-weight: 600; background: none; }
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburgerLine,
+.hamburgerLine::before,
+.hamburgerLine::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #e2e8f0;
+  border-radius: 1px;
+  position: absolute;
+  left: 3px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.hamburgerLine { top: 11px; }
+.hamburgerLine::before { content: ''; top: -6px; position: absolute; left: 0; width: 18px; height: 2px; background: #e2e8f0; border-radius: 1px; }
+.hamburgerLine::after { content: ''; top: 6px; position: absolute; left: 0; width: 18px; height: 2px; background: #e2e8f0; border-radius: 1px; }
+
+.hamburgerOpen { background: transparent; }
+.hamburgerOpen::before { transform: rotate(45deg); top: 0; }
+.hamburgerOpen::after { transform: rotate(-45deg); top: 0; }
+
+/* Mobile menu dropdown */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0;
+  flex-direction: column;
+}
+
+.mobileLink {
+  display: block;
+  width: 100%;
+  padding: 0.75rem var(--spacing-lg);
+  border: none;
+  background: none;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+.mobileLink:hover { background: rgba(255, 255, 255, 0.04); color: #e2e8f0; }
+.mobileLinkActive { color: #ffffff; font-weight: 600; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .logo { height: 26px; }
+
+  .navLinks { display: none; }
+
+  .hamburger { display: block; }
+
+  .mobileMenu { display: flex; }
+}

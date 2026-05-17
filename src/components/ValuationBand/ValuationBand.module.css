@@ -1,0 +1,137 @@
+/* ===== ValuationBand 估值區間 ===== */
+
+.container {
+  padding: var(--spacing-lg);
+}
+
+/* --- 摘要區 --- */
+.summary {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.summaryTitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.summaryValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.summaryItem {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.summaryItemValue {
+  font-family: var(--font-mono);
+  margin-left: var(--spacing-xs);
+}
+
+/* --- 估值表格 --- */
+.bandTable {
+  display: flex;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bandCell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-xs);
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  transition: opacity 0.15s;
+}
+
+.bandCell:hover {
+  opacity: 0.85;
+}
+
+.entryRatio {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.levelName {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  margin: var(--spacing-xs) 0;
+}
+
+.deviationRate {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.indexValue {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+}
+
+@media (max-width: 1400px) {
+  .bandCell {
+    padding: var(--spacing-xs) 2px;
+  }
+
+  .levelName {
+    font-size: 0.8125rem;
+  }
+
+  .entryRatio,
+  .deviationRate,
+  .indexValue {
+    font-size: 0.6875rem;
+  }
+}
+
+/* --- 箭頭指示器 --- */
+.arrowIndicator {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid var(--text-primary);
+}
+
+.arrowLabel {
+  font-size: 0.625rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* space below table for arrow */
+.bandTableWrapper {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+}

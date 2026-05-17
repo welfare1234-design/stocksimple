@@ -1,0 +1,66 @@
+.container {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* 桌面版：橫向滾動 */
+.desktopRow {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-sm);
+}
+
+.desktopRow::-webkit-scrollbar { height: 6px; }
+.desktopRow::-webkit-scrollbar-track { background: transparent; }
+.desktopRow::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.15); border-radius: 3px; }
+
+/* 手機版區塊：預設隱藏 */
+.mobileSection {
+  display: none;
+}
+
+.mobileRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.toggleBtn {
+  width: 100%;
+  padding: 0.4rem 0;
+  border: none;
+  background: none;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+}
+.toggleBtn:hover { color: #e2e8f0; }
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .desktopRow {
+    display: none;
+  }
+
+  .mobileSection {
+    display: block;
+  }
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 0 0 0.2rem;
+}
+
+.sourceText {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0 0 0.5rem;
+}
