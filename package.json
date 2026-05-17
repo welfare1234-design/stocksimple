@@ -17,6 +17,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260517.1",
     "@eslint/js": "^9.39.4",
     "@netlify/functions": "^5.2.0",
     "@testing-library/jest-dom": "^6.9.1",
