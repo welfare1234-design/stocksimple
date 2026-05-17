@@ -1,7 +1,0 @@
-/api/tdcc-big-holders  /.netlify/functions/tdcc-big-holders  200
-/api/yahoo-news  /.netlify/functions/yahoo-news  200
-/api/yahoo-rank  /.netlify/functions/yahoo-rank  200
-/api/yahoo-summary/*  /.netlify/functions/yahoo-summary/:splat  200
-/api/yahoo/*  /.netlify/functions/yahoo/:splat  200
-/api/twse/*  /.netlify/functions/twse/:splat  200
-/*  /index.html  200
