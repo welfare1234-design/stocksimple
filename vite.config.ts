@@ -3,11 +3,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { yahooFinancePlugin } from './vite-yahoo-plugin'
 
-import { cloudflare } from "@cloudflare/vite-plugin";
-
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), yahooFinancePlugin(), cloudflare()],
+  plugins: [react(), yahooFinancePlugin()],
   server: {
     proxy: {
       '/api/yahoo': {

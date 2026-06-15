@@ -85,7 +85,6 @@ function scoreToSignal(score: number): 'safe' | 'caution' | 'danger' {
 
 export function RiskMonitor() {
   const [indicators, setIndicators] = useState<RiskIndicator[]>([]);
-  const [riskScore, setRiskScore] = useState(0);
   const [loading, setLoading] = useState(true);
   const [updatedAt, setUpdatedAt] = useState('');
 
@@ -143,15 +142,7 @@ export function RiskMonitor() {
           };
         });
 
-        // Calculate weighted risk score (0-100)
-        let totalRisk = 0;
-        results.forEach(r => {
-          const score = getScore(r.name, r.name === 'USD/JPY' || r.name === 'LQD信用利差' ? r.change : r.value);
-          totalRisk += ((score - 1) / 3) * r.weight; // normalize 1-4 to 0-100
-        });
-
         setIndicators(results);
-        setRiskScore(Math.round(totalRisk));
         setUpdatedAt(new Date().toLocaleTimeString('zh-TW'));
       } catch { /* ignore */ }
       if (!cancelled) setLoading(false);
@@ -159,9 +150,6 @@ export function RiskMonitor() {
     load();
     return () => { cancelled = true; };
   }, []);
-
-  const riskLevel = riskScore >= 60 ? '高風險' : riskScore >= 30 ? '中等風險' : '低風險';
-  const riskColor = riskScore >= 60 ? '#ef4444' : riskScore >= 30 ? '#f59e0b' : '#22c55e';
 
   return (
     <section className={styles.container}>
