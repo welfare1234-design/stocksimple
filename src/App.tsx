@@ -8,6 +8,7 @@ import {
 } from './services/dataService';
 import { NavigationBar } from './components/NavigationBar/NavigationBar';
 import { IndexOverview } from './components/IndexOverview/IndexOverview';
+import { RiskMonitor } from './components/RiskMonitor/RiskMonitor';
 import { NewsHighlights } from './components/NewsHighlights/NewsHighlights';
 import { MarketSummary } from './components/MarketSummary/MarketSummary';
 import { TopMovers } from './components/TopMovers/TopMovers';
@@ -142,6 +143,8 @@ function DashboardApp() {
         {currentPage === 'daily' && (
           <>
             <IndexOverview indices={state.marketIndices} />
+
+            <RiskMonitor />
 
             <MarketSummary />
 

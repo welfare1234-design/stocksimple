@@ -18,9 +18,11 @@ const INDEX_SYMBOL_MAP: Record<string, string> = {
   sp500: '^GSPC',
   vix: '^VIX',
   emb: 'EMB',
+  tnx: '^TNX',
+  tyx: '^TYX',
+  lqd: 'LQD',
 };
 
-/** 市場指數 metadata */
 const INDEX_META: Record<string, { name: string }> = {
   taiex:  { name: '台股加權指數' },
   djia:   { name: '道瓊工業指數' },
@@ -28,6 +30,9 @@ const INDEX_META: Record<string, { name: string }> = {
   sox:    { name: '費城半導體指數' },
   sp500:  { name: 'S&P 500指數' },
   vix:    { name: 'VIX恐慌指數' },
+  tnx:    { name: '美10年公債殖利率' },
+  tyx:    { name: '美30年公債殖利率' },
+  lqd:    { name: 'CDX IG 信用指標' },
 };
 
 // ---------------------------------------------------------------------------
